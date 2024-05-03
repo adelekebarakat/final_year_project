@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Blood Type Details</title>
+</head>
+<body>
+    <h1>Blood Type Details</h1>
+
+    <h2>Can Donate To</h2>
+    {% for blood_group, can_donate_to_list in can_donate_to_data %}
+        <p>Blood type {{ blood_group }} can donate to:</p>
+        <ul>
+            {% for blood_type in can_donate_to_list %}
+                <li>{{ blood_type.blood_group }}</li>
+            {% endfor %}
+        </ul>
+    {% endfor %}
+
+    <h2>Can Receive From</h2>
+    {% for blood_group, can_receive_from_list in can_receive_from_data %}
+        <p>Blood type {{ blood_group }} can receive from:</p>
+        <ul>
+            {% for blood_type in can_receive_from_list %}
+                <li>{{ blood_type.blood_group }}</li>
+            {% endfor %}
+        </ul>
+    {% endfor %}
+</body>
+</html>
